@@ -174,7 +174,7 @@ function createEngine(opt) {
         if (!hit) return fail(res, 401, 'Please join the test again.');
         const { s, c } = hit; settle(s, c);
         if (m === 'GET' && p === '/api/me') {
-          const parts = s.exam.parts.map((pt, k) => ({ name: pt.name, minutes: pt.minutes + (c.extra[k] || 0), kind: pt.kind, instructions: pt.instructions || [],
+          const parts = s.exam.parts.map((pt, k) => ({ name: pt.name, minutes: pt.minutes + (c.extra[k] || 0), kind: pt.kind, instructions: pt.instructions || [], insAlign: pt.insAlign || '',
             state: stateOf(s, c, k), deadline: deadline(s, c, k), submitted: !!c.submitted[k], auto: !!c.auto[k], windowEnd: windowEnd(s, c, k),
             docs: (s.exam.docs || []).filter(d => d.part == null || d.part === k).map(d => ({ id: d.id, name: d.name })),
             questions: c.started[k] && !c.submitted[k] ? viewPart(s, c, k) : null }));
