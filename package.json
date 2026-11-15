@@ -1,0 +1,9 @@
+{
+  "name": "qpr-online-test-server",
+  "version": "3.9.44",
+  "description": "Online test server for Question Paper Randomizer - test sessions + app/data updates",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}
